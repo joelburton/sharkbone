@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SharkBone</title>
+    <link rel="stylesheet" href="sharkwords.css"/>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="http://unpkg.com/underscore"></script>
+    <script src="http://unpkg.com/backbone"></script>
+    <script src="http://unpkg.com/handlebars/dist/handlebars"></script>
+</head>
+<body>
+
+<div class="sharkwords"></div>
+
+<script type="text/x-handlebars-template" id="sharkwords-template">
+    <h1>SharkBone!</h1>
+    <img src="guess{{ numWrong }}.png" height="225" width="300">
+    <p class="guessed">Wrong guesses: {{ numWrong }}</p>
+    <p class="word">{{ word }}</p>
+    <div class="letters">
+        {{#each btns }}
+            <button value="{{ ltr }}" {{#if used }}disabled{{/if}}>{{ ltr }}</button>
+        {{/each}}
+    </div>
+</script>
+
+<script src="words.js"></script>
+<script src="sharkwords.js"></script>
+</body>
+</html>
